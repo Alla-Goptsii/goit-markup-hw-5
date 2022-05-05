@@ -7,6 +7,7 @@
   --bgc-wight: #ffffff;
   --backdown-tipical: 94px;
   --card-set-gap: 30px;
+  --time-transition: 250ms;
 }
 
 body {
@@ -128,6 +129,8 @@ img {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--color-title);
+
+  transition: color var(--time-transition) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .link:hover,
@@ -155,6 +158,8 @@ img {
   letter-spacing: 0.02em;
 
   color: var(--primary-color-text);
+
+  transition: color var(--time-transition) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts .link:hover,
@@ -169,6 +174,7 @@ img {
   fill: var(--primary-color-text);
 
   margin-right: 10px;
+  transition: fill var(--time-transition) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-link:hover .icon-img,
@@ -210,7 +216,7 @@ img {
 }
 
 .btn {
-  background: var(--color-accent);
+  background-color: var(--color-accent);
   border: 1px solid transparent;
 
   font-weight: 700;
@@ -227,6 +233,9 @@ img {
 
   color: #ffffff;
   cursor: pointer;
+
+  transition: background-color var(--time-transition)
+    cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn:hover,
@@ -389,6 +398,9 @@ img {
   height: 44px;
   border-radius: 50%;
   color: #afb1b8;
+
+  transition: color var(--time-transition) cubic-bezier(0.4, 0, 0.2, 1),
+    background-color var(--time-transition) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .masters-soc-icon {
@@ -434,6 +446,9 @@ img {
 
   width: 100%;
   height: 100%;
+
+  transition: fill var(--time-transition) cubic-bezier(0.4, 0, 0.2, 1),
+    border-color var(--time-transition) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-link:hover,
@@ -475,6 +490,12 @@ address {
 
 .map {
   color: #ffffff;
+
+  transition: color var(--time-transition) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.map:hover {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .address-item {
@@ -487,6 +508,8 @@ address {
 
 .link-footer {
   color: rgba(255, 255, 255, 0.6);
+
+  transition: color var(--time-transition) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-footer:hover,
@@ -521,6 +544,9 @@ address {
   border-radius: 50%;
   background-color: #ffffff10;
   color: #ffffff;
+
+  transition: background-color var(--time-transition)
+    cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-soc-item:not(:last-child) {
@@ -548,14 +574,19 @@ address {
   border-radius: 4px;
   min-width: 73px;
   padding: 6px 22px;
-  background: #f5f4fa;
+  background-color: #f5f4fa;
 
   cursor: pointer;
+
+  transition: background-color var(--time-transition)
+      cubic-bezier(0.4, 0, 0.2, 1),
+    color var(--time-transition) cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow var(--time-transition) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
 .button:focus {
-  background: #2196f3;
+  background-color: #2196f3;
   color: #ffffff;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -612,7 +643,6 @@ address {
 
 .card-link {
   display: block;
-  overflow: hidden;
 }
 
 .card-link:hover {
@@ -628,11 +658,11 @@ address {
   padding-bottom: 20px;
   padding-left: 24px;
   border: 1px solid #eeeeee;
-  background-color: #fff;
 }
 
 .card-thumb {
   position: relative;
+  overflow: hidden;
 }
 
 .card-thumb::before {
@@ -648,11 +678,35 @@ address {
 
   /* opacity: 0; */
   transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--time-transition) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-link:hover .card-thumb::before {
   /* opacity: 1; */
+  transform: translateY(0);
+}
+
+.card-thumb-title {
+  position: absolute;
+  padding: 63px 24px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+
+  letter-spacing: 0.03em;
+
+  color: #ffffff;
+
+  transform: translateY(100%);
+  transition: transform var(--time-transition) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-link:hover .card-thumb-title {
   transform: translateY(0);
 }
 
