@@ -437,10 +437,10 @@ img {
 }
 
 .client-link {
-  display: block;
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 32px;
+  /* padding: 16px 32px; */
   border: 1px solid #afb1b8;
   border-radius: 4px;
   fill: #afb1b8;
@@ -646,7 +646,8 @@ address {
   display: block;
 }
 
-.card-link:hover .card-link:focus {
+.card-link:hover,
+.card-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
